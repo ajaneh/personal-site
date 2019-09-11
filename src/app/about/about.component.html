@@ -1,1 +1,185 @@
-<p>about works!</p>
+<div class="row">
+  <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="scroll(Publications)">Publications</button>
+  <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="scroll(Experience)">Experience</button>
+  <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="scroll(Skills)">Skills</button>
+  <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="scroll(Awards)">Awards</button>
+  <button type="button" mdbBtn color="primary" mdbWavesEffect (click)="scroll(education)">Education</button>
+</div>
+<div #Publications>
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>Publications</h4>
+    </mdb-card-title>
+    <div class="card-deck">
+      <mdb-card>
+      <mdb-card-body>
+        <mdb-card-title>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167732216322851" mdbWavesEffect>
+        Influence of an ionic liquid on the conformational sampling of Xaa-Pro dipeptides
+      </a>
+        </mdb-card-title>
+        <mdb-card-text>
+          <i>AJ Heyert, SL Knox, GE Lindberg, JL Baker</i> <br> Journal of Molecular Liquids, 2017
+    </mdb-card-text>
+      </mdb-card-body>
+      </mdb-card>
+        <mdb-card>
+        <mdb-card-body>
+          <mdb-card-title>
+      <a href="https://pubs.rsc.org/en/content/articlehtml/2019/cp/c9cp01882d" mdbWavesEffect>
+        The ionic liquid [C4mpy][Tf2N] induces bound-like structure in the intrinsically disordered protein FlgM
+      </a>
+          </mdb-card-title>
+          <mdb-card-text>
+            <i>EE Carter, AJ Heyert, M De Souza, JL Baker, GE Lindberg </i> <br> Physical Chemistry Chemical Physics, 2019
+    </mdb-card-text>
+        </mdb-card-body>
+        </mdb-card>
+      <mdb-card>
+        <mdb-card-body>
+          <mdb-card-title>
+            <a href="https://www.sciencedirect.com/science/article/pii/B9780128136416000029" mdbWavesEffect>
+              Molecular Simulations of Volatile Organic Interfaces
+            </a>
+          </mdb-card-title>
+          <mdb-card-text>
+            <i>K Gochenour, AJ Heyert, GE Lindberg</i> <br> Physical Chemistry of Gas-Liquid Interfaces, 2018
+          </mdb-card-text>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </mdb-card-body>
+</mdb-card>
+</div>
+
+<div #Experience>
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>Experience</h4>
+    </mdb-card-title>
+    <div style="margin-left: 2rem">
+     <div class="row view overlay zoom" >
+       <p class="red-text"><b>Software Developer - eFuneral</b></p>
+       <div class="col align-bottom" *ngIf="!worksPlaces.eFuneral" (click)="togglePanel('eFuneral', true)">
+         <mdb-icon mdbWavesEffect fas icon="angle-down"></mdb-icon></div>
+       <div class="col align-bottom" *ngIf="worksPlaces.eFuneral" (click)="togglePanel('eFuneral', false)">
+         <mdb-icon mdbWavesEffect fas icon="angle-up"></mdb-icon></div>
+     </div>
+       <mdb-card-text *ngIf="worksPlaces.eFuneral">
+         <ul class="list-group list-group-flush">
+           <li class="list-group-item">Served as a full-stack web developer in an AGILE work environment</li>
+         <li class="list-group-item">Leveraged salesforce to efficiently post and retrieve data</li>
+         <li class="list-group-item">Integrated applications with various RESTful APIs</li>
+         <li class="list-group-item">Utilized independent problem solving skills to complete assigned tasks</li>
+         <li class="list-group-item">Communicated effectively with co-workers on team projects</li>
+       </ul>
+    </mdb-card-text>
+    <div class="row view overlay zoom">
+      <p class="red-text"><b>Graduate Research Scientist - Northern Arizona University</b></p>
+      <div class="col align-bottom" *ngIf="!worksPlaces.research" (click)="togglePanel('research', true)">
+        <mdb-icon mdbWavesEffect fas icon="angle-down"></mdb-icon></div>
+      <div class="col align-bottom" *ngIf="worksPlaces.research" (click)="togglePanel('research', false)">
+        <mdb-icon mdbWavesEffect fas icon="angle-up"></mdb-icon></div>
+    </div>
+    <mdb-card-text *ngIf="worksPlaces.research">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Independently conducted and analyzed classical molecular dynamics and enhanced
+          sampling simulations</li>
+        <li class="list-group-item">Wrote python/bash scripts to automate SLURM job submissions and dependencies</li>
+        <li class="list-group-item">Reviewed relevant literature to optimize experimental procedures</li>
+        <li class="list-group-item">Created novel data analysis programs with Python</li>
+        <li class="list-group-item">Mentored several undergraduate students</li>
+        <li class="list-group-item">Obtained grant funding to hire undegraduates</li>
+        <li class="list-group-item">Presented findings at two national conferences and several local symposia</li>
+      </ul>
+    </mdb-card-text>
+    <div class="row view overlay zoom">
+      <p class="red-text"><b>Teaching Assistant - Northern Arizona University</b></p>
+      <div class="col align-bottom" *ngIf="!worksPlaces.teaching" (click)="togglePanel('teaching', true)">
+        <mdb-icon mdbWavesEffect fas icon="angle-down"></mdb-icon></div>
+      <div class="col align-bottom" *ngIf="worksPlaces.teaching" (click)="togglePanel('teaching', false)">
+        <mdb-icon mdbWavesEffect fas icon="angle-up"></mdb-icon></div>
+    </div>
+    <mdb-card-text *ngIf="worksPlaces.teaching">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Taught labs for organic and physical chemistry</li>
+        <li class="list-group-item">Implemented the departmental safety and chemical hygiene policies</li>
+        <li class="list-group-item">Trained students on the proper use of NMR and UV-VIS instruments, distillation
+          apparatus’, rotary evaporators, and high vacuum</li>
+        <li class="list-group-item">Analyzed student samples with FTIR and GC</li>
+      </ul>
+    </mdb-card-text>
+    <div class="row view overlay zoom">
+      <p class="red-text"><b>Undergraduate Research Scientist - Northern Arizona University</b></p>
+      <div class="col align-bottom" *ngIf="!worksPlaces.undergrad" (click)="togglePanel('undergrad', true)">
+        <mdb-icon mdbWavesEffect fas icon="angle-down"></mdb-icon></div>
+      <div class="col align-bottom" *ngIf="worksPlaces.undergrad" (click)="togglePanel('undergrad', false)">
+        <mdb-icon mdbWavesEffect fas icon="angle-up"></mdb-icon></div>
+    </div>
+    <mdb-card-text *ngIf="worksPlaces.undergrad">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Created and administered learning diagnostic surveys</li>
+        <li class="list-group-item">Interviewed student participants</li>
+        <li class="list-group-item">Refined initial surveys based upon student and instructor response</li>
+        <li class="list-group-item">Utilized advanced functions in Excel and SPSS to interpret survey results</li>
+      </ul>
+    </mdb-card-text>
+    </div>
+  </mdb-card-body>
+</mdb-card>
+</div>
+
+<div #Skills>
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>Skills</h4>
+    </mdb-card-title>
+    <mdb-card-text>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>Languages:  </b> Python, Javascript, C#, bash</li>
+        <li class="list-group-item"><b>Frameworks:  </b>Angular, React, Django, .NET</li>
+        <li class="list-group-item"><b>Relevant Skills & Softwares:  </b>Git, Agile Methodologies, EC2, AWS, High Performance Computing, Linux/Unix, OOP, ​
+          LabVIEW, MatPlotLib, Gnuplot, MS Office, AMBER, Gromacs, NAMD</li>
+      </ul>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>
+</div>
+
+<div #Awards>
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>Awards</h4>
+    </mdb-card-title>
+    <mdb-card-text>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Most Promising Graduate Student Researcher/Scholar Award</li>
+        <li class="list-group-item"> Graduate Student Research Award</li>
+        <li class="list-group-item"> Graduate Student Scholar Award</li>
+        <li class="list-group-item"> V.M. Slipher Award for Outstanding Achievement in Chemistry</li>
+        <li class="list-group-item"> 2nd Place in the NAU 3 Minute Research Presentation Contest</li>
+      </ul>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>
+</div>
+
+<div #education>
+<mdb-card >
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>Education</h4>
+    </mdb-card-title>
+    <mdb-card-text>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">M.S. Chemistry <i>(Physical/Computational)</i> ​ <b>GPA - 4.0</b>​ ​ May 2018</li>
+        <li class="list-group-item">B.S. Chemistry​<i>(Health Preprofessional)</i>  December 2015    </li>
+      </ul>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>
+</div>
